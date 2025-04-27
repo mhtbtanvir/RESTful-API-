@@ -34,22 +34,20 @@ This is a **RESTful API** built using **Flask** that allows you to manage studen
 
   ```json
   {
-    "name": "John Doe",
-    "personnummer": "920223-9999",
-    "courses_passed": ["CSE1110", "CSE1111"]
-  }
-PUT /update/<id>
-Update an existing student by ID.
-Request Body (JSON):
+  "name": "Tanvir Mahtab",
+   "personnummer": "990102-1234",
+   "courses_passed": ["CSE1010", "CSE2020"]
+   }
+- **PUT** `/update/<id>`  
+  Update an existing student by ID.  
+  **Request Body** (JSON):
 
-json
-Copy
-Edit
-{
-  "name": "John Doe",
-  "personnummer": "920223-9999",
-  "courses_passed": ["CSE1110", "CSE1111"]
-}
+  ```json
+   {
+    "name": "Tanvir Mahtab Updated",
+    "personnummer": "990101-1234",
+    "courses_passed": ["CSE1010", "CSE2020", "CSE3030", "CSE4566"]
+    }
 DELETE /delete/<id>
 Delete a student by ID.
 
@@ -61,33 +59,33 @@ GET /program/<id>
 Retrieve a specific program by ID.
 
 Completion Check Endpoint
-GET /finished/<student_id>/<program_id>
-Check if a student has completed all the required courses for a program.
-Response (example):
+- **GET** `/finished/<student_id>/<program_id>`  
+  Check if a student has completed all the required courses for a program.  
+  **Response** (example):
 
-json
-Copy
-Edit
-{
-  "status": true,
-  "completed_courses": 10
-}
+  ```json
+  {
+    "status": true,
+    "completed_courses": 10
+  }
+
 Data Validation
-Personnummer:
-Must follow the format YYMMDD-XXXX and include valid month and day values.
+-**Personnummer**:
+ Must follow the format YYMMDD-XXXX and include valid month and day values.
 
-Course IDs:
-Must follow the format ABC1234 (3 letters followed by 4 digits).
+-**Course IDs:**
+ Must follow the format ABC1234 (3 letters followed by 4 digits).
 
 Installation
-Clone the repository:
+-**Clone the repository:**
 
-bash
-Copy
-Edit
-git clone https://github.com/mhtbtanvir/RESTful-API-.git
-cd RESTful-API-
-Install dependencies:
+    
+    
+      git clone https://github.com/mhtbtanvir/RESTful-API-.git
+      cd RESTful-API-
+                  
+  
+  -**Install dependencies:**
 
 Download and install Python 3.12 if you don't have it.
 
@@ -95,56 +93,47 @@ In a terminal, navigate to the directory where app.py is located.
 
 Install Flask:
 
-bash
-Copy
-Edit
+
 python -m pip install flask
 Set the environment variables:
 
 On Windows:
 
-bash
-Copy
-Edit
+
 set FLASK_APP=app.py
 set FLASK_ENV=development
 On macOS/Linux:
 
-bash
-Copy
-Edit
-export FLASK_APP=app.py
-export FLASK_ENV=development
-Start Flask:
+    
+    
+    export FLASK_APP=app.py
+    export FLASK_ENV=development
+    Start Flask:
+    
 
-bash
-Copy
-Edit
-flask run
-or
+    
+    
+    flask run
+    OR
+    python -m flask run
 
-bash
-Copy
-Edit
-python -m flask run
-Access the API at:
-http://127.0.0.1:5000
+    
+    Access the API at:
+    http://127.0.0.1:5000
+          
+
 
 Testing the API
 You can use tools like Postman or cURL to test the API endpoints.
 Ensure that the request body is in JSON format where required.
 
 Folder Structure
-bash
-Copy
-Edit
-rest-api-postman/
-├── app.py         # Main Flask application
-├── README.md      # Project documentation
-├── LICENSE
-License
-This project is licensed under the MIT License.
-See the LICENSE file for more details.
+
+      rest-api-postman/
+      ├── app.py         # Main Flask application
+      ├── README.md      # Project documentation
+      ├──API test.postman_collection 
+
 
 Author
 Developed by Tanvir Mahtab.
