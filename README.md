@@ -1,17 +1,22 @@
 # Student and Program Management API
 
-This is a RESTful API built using Flask that allows you to manage students, their courses, and academic programs. The API provides endpoints for CRUD operations on students and programs, as well as functionality to check if a student has completed the requirements for a specific program.
+This is a **RESTful API** built using **Flask** that allows you to manage students, their courses, and academic programs. The API provides endpoints for CRUD operations on students and programs, as well as functionality to check if a student has completed the requirements for a specific program.
+
+---
 
 ## Features
 
 - **Student Management**:
   - Add, update, retrieve, and delete student records.
   - Validate student information, including `personnummer` and course IDs.
-  - **Program Management**:
+
+- **Program Management**:
   - Retrieve program details and their required courses.
-  
+
 - **Completion Check**:
   - Verify if a student has completed all the required courses for a specific program.
+
+---
 
 ## Endpoints
 
@@ -26,6 +31,7 @@ This is a RESTful API built using Flask that allows you to manage students, thei
 - **POST** `/create`  
   Add a new student.  
   **Request Body** (JSON):
+
   ```json
   {
     "name": "John Doe",
@@ -36,6 +42,14 @@ PUT /update/<id>
 Update an existing student by ID.
 Request Body (JSON):
 
+json
+Copy
+Edit
+{
+  "name": "John Doe",
+  "personnummer": "920223-9999",
+  "courses_passed": ["CSE1110", "CSE1111"]
+}
 DELETE /delete/<id>
 Delete a student by ID.
 
@@ -49,49 +63,89 @@ Retrieve a specific program by ID.
 Completion Check Endpoint
 GET /finished/<student_id>/<program_id>
 Check if a student has completed all the required courses for a program.
-Response:  
+Response (example):
 
+json
+Copy
+Edit
 {
   "status": true,
   "completed_courses": 10
-}  
-
+}
 Data Validation
-Personnummer: Must follow the format YYMMDD-XXXX and include valid month and day values.
-Course IDs: Must follow the format ABC1234 (3 letters followed by 4 digits).
+Personnummer:
+Must follow the format YYMMDD-XXXX and include valid month and day values.
 
- Installation
+Course IDs:
+Must follow the format ABC1234 (3 letters followed by 4 digits).
+
+Installation
 Clone the repository:
+
+bash
+Copy
+Edit
 git clone https://github.com/mhtbtanvir/RESTful-API-.git
 cd RESTful-API-
 Install dependencies:
 
-Download and install python 3.12 
-In a terminal: 
+Download and install Python 3.12 if you don't have it.
 
-Enter the directory where app.py is located. 
-Install the Python package flask: python -m pip install flask 
-Set the following environmental variables: 
-set FLASK_APP=app.py 
-set FLASK_ENV=development 
-(on mac/linux, “export” instead of “set”) 
-Start flask: python –m flask run or flask run 
+In a terminal, navigate to the directory where app.py is located.
 
+Install Flask:
 
-Access the API at http://127.0.0.1:5000.
+bash
+Copy
+Edit
+python -m pip install flask
+Set the environment variables:
+
+On Windows:
+
+bash
+Copy
+Edit
+set FLASK_APP=app.py
+set FLASK_ENV=development
+On macOS/Linux:
+
+bash
+Copy
+Edit
+export FLASK_APP=app.py
+export FLASK_ENV=development
+Start Flask:
+
+bash
+Copy
+Edit
+flask run
+or
+
+bash
+Copy
+Edit
+python -m flask run
+Access the API at:
+http://127.0.0.1:5000
 
 Testing the API
-You can use tools like Postman or curl to test the API endpoints. Ensure that the request body is in JSON format where required.
+You can use tools like Postman or cURL to test the API endpoints.
+Ensure that the request body is in JSON format where required.
 
 Folder Structure
+bash
+Copy
+Edit
 rest-api-postman/
-├── [app.py](http://_vscodecontentref_/0)          # Main Flask application
-├── README.md       # Project documentation
-├──app.py
-├──
-
+├── app.py         # Main Flask application
+├── README.md      # Project documentation
+├── LICENSE
 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License.
+See the LICENSE file for more details.
 
 Author
-Developed by [Tanvir Mahtab]. Feel free to reach out for any questions or suggestions!
+Developed by Tanvir Mahtab.
+Feel free to reach out for any questions or suggestions!
